@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+    padding:0;
+    margin: 0;
+    font-family: 'Chivo Mono', monospace;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Work Sans', sans-serif;;
+}
+
+    @import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@100;300;500;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:wght@200;300;500;700;800&display=swap');
+
+header{
+    background-color:rgb(193, 206, 206)
+}
+
+.navDiv{
+    display: flex;
+    justify-content: space-around;
+}
+
+div a{
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+}
+
+main{
+    margin-top: 2%;
+}
+
+.parent{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+fieldset{
+    width: 50%;
+}
+
+main p {
+    display: flex;
+    justify-content: center;
+    margin: 5px auto;
+}
+#employeeData{
+    display: flex;
+    flex-direction:column ;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    margin: 5% 35%;
+}
+
+form div {
+    margin:2% 10%;
+}
+
+#info div {
+    margin-bottom:5%;
+}
+
+
+footer{
+    background-color: rgb(193, 206, 206);
+display: flex;
+justify-content: space-evenly;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+}
