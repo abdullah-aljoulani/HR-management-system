@@ -73,7 +73,7 @@ for (let i = 0; i < arrEmployee.length ; i ++ ){
 }
 
 
-
+let newArr = [];
 function Employee( FullName, Department, Level, ImageURL ) {
     this.id = 0
     this.FullName = FullName
@@ -81,6 +81,7 @@ function Employee( FullName, Department, Level, ImageURL ) {
     this.level = Level
     this.ImageURL = ImageURL
     this.Salary = 0
+    newArr.push(this)
     }
 
 
@@ -98,38 +99,48 @@ function Employee( FullName, Department, Level, ImageURL ) {
     return this.Salary
     }
 
-    Employee.prototype.render = function () {
+    function render (){
 
     const container = document.getElementById("info")
+    container.innerHTML = "";
 
+    if (newArr == null){
+        newArr = []
+    };
+
+    for (let i = 0; i < newArr.length; i++){
     const divEle = document.createElement("div")
     container.appendChild(divEle)
-
+    
     const theName = document.createElement("h1")
     divEle.appendChild(theName)
-    theName.textContent = this.FullName
-
+    theName.textContent = newArr[i].FullName
+    
     const newImg = document.createElement("img")
     divEle.appendChild(newImg)
-    newImg.setAttribute("src", this.ImageURL)
-
+    newImg.setAttribute("src", newArr[i].ImageURL)
 
     const deparTment = document.createElement("p")
     divEle.appendChild(deparTment)
-    deparTment.textContent = this.Department
+    deparTment.textContent = newArr[i].Department
 
     const level = document.createElement("p")
     divEle.appendChild(level)
-    level.textContent = this.level
+    level.textContent = newArr[i].level
 
     const theSalary = document.createElement("p")
     divEle.appendChild(theSalary)
-    theSalary.textContent =`salary is : ${Math.floor(this.Salary)}$`
+    theSalary.textContent =`salary is : ${Math.floor(newArr[i].Salary)}$`
 
     const theId = document.createElement("p")
     divEle.appendChild(theId)
-    theId.textContent = `id is : ${this.id}`
+    theId.textContent = `id is : ${newArr[i].id}`
     }
+}
+
+const fullInformation = document.getElementById("employeeData")
+    fullInformation.addEventListener("submit", addNewInfo);
+
 
     Employee.prototype.idNum = function(){
 
@@ -153,11 +164,27 @@ function Employee( FullName, Department, Level, ImageURL ) {
 
     final.calculateSalary()
     final.idNum()
-    final.render()
+
+    // final.render()
+
+    let jason1 = JSON.stringify(newArr)
+localStorage.setItem('allEmployee', jason1)
+
+render()
 
 }
 
-    const fullInformation = document.getElementById("employeeData")
-    fullInformation.addEventListener("submit", addNewInfo);
 
+    function getEmplyoee() {
+
+
+
+        let jason1 = localStorage.getItem('allEmployee')
+        newArr = JSON.parse(jason1)
+    
+    }
+    
+    getEmplyoee();
+    
+    render();
 
