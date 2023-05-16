@@ -28,6 +28,18 @@ main{
     margin-top: 2%;
 }
 
+.table-main{
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    background-color: #dfdfdf;
+}
+
+#tableE{
+    height: 100vh;
+        display: flex;
+        align-items: center
+}
 .parent{
     display: flex;
     justify-content: center;
